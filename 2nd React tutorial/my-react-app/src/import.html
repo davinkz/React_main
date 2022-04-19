@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="message"></p>
+
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<body>
+<script type="module">
+    import {name, age, auth} from "./person.js";
+    import mess from "./message.js";
+
+    document.getElementById('demo').innerHTML = name;
+    document.getElementById('demo2').innerHTML = age;
+    document.getElementById('message').innerHTML = mess();
+
+
+    // function RenderApp(){
+    //     document.getElementById('demo3').innerHTML = "Login sucessfully";
+   
+    //     return "Login sucessfully";
+    // }
+
+    
+    // function RedirectToLogin(){
+    //     document.getElementById('demo4').innerHTML ="You need to login";   
+    //     return "You need to login"
+    // }
+
+    const RenderApp =() => {
+        document.getElementById('demo3').innerHTML = "Login sucessfully";   
+         return "Login sucessfully";
+    }
+
+    const RedirectToLogin =() => {
+        document.getElementById('demo4').innerHTML ="You need to login";   
+        return "You need to login"
+    }
+
+    //const auth = 10; 
+
+    auth ? RenderApp() : RedirectToLogin();
+
+
+</script>
+</body>
+</html>
